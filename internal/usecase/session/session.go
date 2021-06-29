@@ -83,13 +83,14 @@ func (u UseCase) Create(ctx context.Context, userhash userentity.Hash, sessionDa
 // Get session
 // sessionkey is the user hash-id
 // sessionid is the sessionid returned when logged in or creating session
+//TODO Broken Function
 func (u UseCase) Get(ctx context.Context, userhash userentity.Hash, sessionid string) (sessionentity.Session, error) {
 	var err error
 	s := sessionentity.Session{}
 
-	if userhash == "" {
-		return s, sessionentity.Err
-	}
+//	if userhash == "" {
+//		return s, sessionentity.Err
+//	}
 
 	if err := userhash.Validate(); err != nil {
 		return s, err
