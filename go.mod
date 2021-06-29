@@ -4,6 +4,7 @@ go 1.13
 
 require (
 	firebase.google.com/go v3.9.0+incompatible
+	github.com/cucumber/godog/gherkin // added for godog v.9.0 
 	github.com/BurntSushi/toml v0.3.1
 	github.com/aws/aws-sdk-go v1.25.21
 	github.com/coreos/bbolt v1.3.3 // indirect
