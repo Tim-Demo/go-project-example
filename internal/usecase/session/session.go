@@ -59,25 +59,26 @@ func (u UseCase) Create(ctx context.Context, userhash userentity.Hash, sessionDa
 }
 
 // SetUserInfo to set/change user information in session
-func (u UseCase) SetUserInfo(ctx context.Context, userhash userentity.Hash, sessionid string, userData sessionentity.UserData) error {
-	sess, err := u.Get(ctx, userhash, sessionid)
-	if err != nil {
-		return err
-	}
-
-	user := userentity.User{}
-	bio := userentity.Bio{}
-
-	if userData.User != user {
-		sess.UserData.User = userData.User
-	}
-
-	if userData.Bio != bio {
-		sess.UserData.Bio = userData.Bio
-	}
-
-	return nil
-}
+//TODO Broken Function 
+//func (u UseCase) SetUserInfo(ctx context.Context, userhash userentity.Hash, sessionid string, userData sessionentity.UserData) error {
+//	sess, err := u.Get(ctx, userhash, sessionid)
+//	if err != nil {
+//		return err
+//	}
+//
+//	user := userentity.User{}
+//	bio := userentity.Bio{}
+//
+//	if userData.User != user {
+//		sess.UserData.User = userData.User
+//	}
+//
+//	if userData.Bio != bio {
+//		sess.UserData.Bio = userData.Bio
+//	}
+//
+//	return nil
+//}
 
 // Get session
 // sessionkey is the user hash-id
