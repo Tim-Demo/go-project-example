@@ -35,17 +35,18 @@ func New(stateRepo stateRepository) *Usecase {
 }
 
 // create id for state
-func (u Usecase) createID(data entity.State) (string, error) {
-	now := time.Now()
-
-	// key for state_id generation conains ulid:identifier:timeunix
-	keyList := []string{u.ulidgen.Ulid(), data.Identifier, now.String()}
-	key := strings.Join(keyList, ":")
-	// encode string to create a stateID
-	stateID := base64.RawStdEncoding.EncodeToString([]byte(key))
-
-	return stateID, nil
-}
+//TODO Broken Function
+//func (u Usecase) createID(data entity.State) (string, error) {
+//	now := time.Now()
+//
+//	// key for state_id generation conains ulid:identifier:timeunix
+//	keyList := []string{u.ulidgen.Ulid(), data.Identifier, now.String()}
+//	key := strings.Join(keyList, ":")
+//	// encode string to create a stateID
+//	stateID := base64.RawStdEncoding.EncodeToString([]byte(key))
+//
+//	return stateID, nil
+//}
 
 // Create state
 // returning state_id and error
